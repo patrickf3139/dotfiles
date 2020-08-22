@@ -8,10 +8,12 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
-[pager]
-  branch = false
-  diff = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
-  show = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
 [alias]
   aliases = config --get-regexp ^alias\\.
   amend = commit --all --amend --no-edit
